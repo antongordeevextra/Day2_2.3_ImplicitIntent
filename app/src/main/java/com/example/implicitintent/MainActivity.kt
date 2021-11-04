@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import androidx.core.app.ShareCompat
 import com.example.implicitintent.databinding.ActivityMainBinding
@@ -53,5 +54,10 @@ class MainActivity : AppCompatActivity() {
             .setText(txt)
             .startChooser()
 
+    }
+
+    fun takePic(view: android.view.View) {
+        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE_SECURE)
+        startActivity(intent)
     }
 }
